@@ -1,2 +1,43 @@
+# PYTHON_SHARE_PATH=/usr/local/share/python
+# If you use system python (that comes - depending on the OS X version -
+# with older versions of numpy, scipy and matplotlib), you actually may
+# have to set the `PYTHONPATH` in order to make the brewed packages come
+# before these shipped packages in Python's `sys.path`.
+#    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+
+# If you need Python to find the installed site-packages:
+#   mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+#  echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+
+# Setuptools and Pip have been installed. To update them
+#  pip install --upgrade setuptools
+#  pip install --upgrade pip
+
+# See: https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python
+
+# Homebrew tells you to set env variables to the Cellar directly but a better way even instead of /LinkedKegs is to use /usr/local/opt
+# and binaries are linked usually under /usr/local/bin also
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+export AWS_AUTO_SCALING_HOME="/usr/local/Library/LinkedKegs/auto-scaling/libexec"
+export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/libexec"
+export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
+export AWS_ELASTICACHE_HOME="/usr/local/Library/LinkedKegs/aws-elasticache/libexec"
+export AWS_CLOUDWATCH_HOME="/usr/local/Library/LinkedKegs/cloud-watch/libexec"
+export SERVICE_HOME="$AWS_CLOUDWATCH_HOME"
+export AWS_IAM_HOME="/usr/local/Library/LinkedKegs/aws-iam-tools/jars"
+export AWS_SNS_HOME="/usr/local/Library/LinkedKegs/aws-sns-cli/jars"
+export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
+export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/libexec"
+export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/libexec"
+export AWS_RDS_HOME="/usr/local/Library/LinkedKegs/rds-command-line-tools/libexec"
+
+ANDROID_TOOLS_PATH=/Users/rupen/Library/Android/sdk/platform-tools:/Users/rupen/Library/Android/sdk/tools
+# OLD Eclipse ADT PATH - ANDROID_TOOLS_PATH=/Users/rupen/Development/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:/Users/rupen/Development/adt-bundle-mac-x86_64-20130219/sdk/tools
+
+NODE_PATH=/usr/local/share/npm/bin
+
 export GOPATH=$HOME/Development/go
-export PATH=$PATH:$GOPATH/bin
+
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:${NODE_PATH}:${PATH}:${ANDROID_TOOLS_PATH}:${GOPATH}/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting

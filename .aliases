@@ -54,12 +54,19 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm cache clean; npm install npm -g; npm update -g; rvm get stable; rvm cleanup all; sudo gem update --system; sudo gem update; heroku update'
+
+alias updategopkg='go get -u all'
 
 # In case of errors with brew and ruby this resets it all
 alias resetbrew='sudo chown -R $(whoami):admin /usr/local;cd /usr/local;git fetch;git reset --hard origin/master;sudo chown -R root:wheel /usr/local/McAfee;sudo chown -R /usr/local/jamf'
 
-alias updategopkg='go get -u all'
+# Node listings
+alias npm-list="npm list -g --long --parseable | grep 'lib/node_modules/[^/]*$' | cut -d : -f 2 | sed 's/@/	/g' | column -t"
+
+# Notes on Manual upgrades and updates
+# Mavericks and up should have XCode command line tools as a system update
+# Android studio has a Configure option on the startup screen then select the SDK Manager to update the Android SDK's.  Note the path they are installed by looking at the path when you select them.  Update bash_profile appropriately to have these in the PATH otherwise things like cordova and ionic won't work out too well
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -161,9 +168,6 @@ alias docker4mac='unset ${!DOCKER_*}'
 # Run local godoc server then browser to localhost:8080  to see all docs and run local go tour
 alias localgodoc='godoc -http=":8080"'
 alias localgotour='go tool tour'
-alias updategopkg='go get -u all'
-
-
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
