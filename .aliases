@@ -53,8 +53,21 @@ alias week='date +%V'
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
+# See what downloads your Mac is tracking
+alias tracked="SQLITE3 ~/LIBRARY/PREFERENCES/COM.APPLE.LAUNCHSERVICES.QUARANTINEEVENTSV* 'SELECT LSQUARANTINEDATAURLSTRING FROM LSQUARANTINEEVENT'"
+
+# Delete the tracking list of downloads from your Mac
+alias cleartracked="SQLITE3 ~/LIBRARY/PREFERENCES/COM.APPLE.LAUNCHSERVICES.QUARANTINEEVENTSV* 'DELETE FROM LSQUARANTINEEVENT'"
+
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm cache clean; npm install npm -g; npm update -g; rvm get stable; rvm cleanup all; sudo gem update --system; sudo gem update; heroku update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm cache clean; npm install npm -g; npm update -g; rvm get stable; rvm cleanup all; sudo gem update --system; sudo gem update; heroku update; conda update conda; conda clean -a'
+
+# Common conda commands
+# alias conact='conda activate <environment name>'
+# alias condeact='conda deactivate'
+# alias concre='conda create -n <env_name> python=<python version>'
+# alias conrem='conda remove --all -n'
+# alias concln='conda clean -a'
 
 alias updategopkg='go get -u all'
 
@@ -63,6 +76,8 @@ alias resetbrew='sudo chown -R $(whoami):admin /usr/local;cd /usr/local;git fetc
 
 # Node listings
 alias npm-list="npm list -g --long --parseable | grep 'lib/node_modules/[^/]*$' | cut -d : -f 2 | sed 's/@/	/g' | column -t"
+
+# To activate anaconda environment first type: conda activate  To deactivate: conda deactivate
 
 # Notes on Manual upgrades and updates
 # Mavericks and up should have XCode command line tools as a system update
