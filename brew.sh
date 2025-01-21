@@ -26,6 +26,15 @@ brew install gnu-sed
 brew install bash
 brew install bash-completion2
 
+brew install iterm2
+brew install anaconda
+brew install cursor
+brew install visual-studio-code
+brew install bruno
+brew install utm
+brew install zenmap
+brew install angry-ip-scanner
+
 # Switch to using brew-installed bash as default shell
 # EDIT: Do not set bash as default shell but make sure the homebrew version is available to call
 # if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -37,7 +46,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg

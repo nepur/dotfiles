@@ -40,6 +40,6 @@
 
 export GOPATH=$HOME/Development/go;
 
-export PATH=${HOME}/bin:${PATH}:${GOPATH}/bin;
+export PATH=${HOME}/bin:${PATH}:${GOPATH}/bin:${HOME}/.rvm/bin;
 
 # export PATH=/usr/local/sbin:~/bin:${NODE_PATH}:${PATH}:${ANDROID_TOOLS_PATH}:${GOPATH}/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
