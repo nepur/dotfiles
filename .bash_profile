@@ -1,3 +1,5 @@
+# Shebang to set to bash is not meaningful in this file since it is run by the shell itself that we are trying to customize
+
 # Add `~/bin` to the `$PATH`
 # EDIT: Move this to .path instead
 # export PATH="$HOME/bin:$PATH";

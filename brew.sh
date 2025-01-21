@@ -22,10 +22,8 @@ brew install moreutils
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed
-# Install a modern version of Bash.
-brew install bash
-brew install bash-completion2
 
+# These are specific dev tools that are useful to install
 brew install iterm2
 brew install anaconda
 brew install cursor
@@ -34,6 +32,10 @@ brew install bruno
 brew install utm
 brew install zenmap
 brew install angry-ip-scanner
+
+# Install a modern version of Bash.
+brew install bash
+brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
 # EDIT: Do not set bash as default shell but make sure the homebrew version is available to call
