@@ -21,7 +21,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
@@ -43,7 +43,7 @@ brew install wget --with-iri
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install screen
@@ -66,7 +66,7 @@ brew install dex2jar
 brew install dns2tcp
 brew install fcrackzip
 brew install foremost
-brew install hashpump
+# brew install hashpump
 brew install hydra
 brew install john
 brew install knock
@@ -77,7 +77,7 @@ brew install socat
 brew install sqlmap
 brew install tcpflow
 brew install tcpreplay
-brew install tcptrace
+# brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
@@ -88,7 +88,7 @@ brew install ack
 brew install git
 brew install git-lfs
 brew install gs
-brew install imagemagick --with-webp
+brew install imagemagick
 brew install lua
 brew install lynx
 brew install p7zip
