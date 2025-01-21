@@ -27,9 +27,13 @@ brew install bash
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
+# EDIT: Do not set bash as default shell but make sure the homebrew version is available to call
+# if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+#  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+#  chsh -s "${BREW_PREFIX}/bin/bash";
+# fi;
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
 # Install `wget` with IRI support.
